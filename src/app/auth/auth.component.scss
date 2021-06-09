@@ -1,0 +1,20 @@
+.error{
+    color: #D8000C;
+    background-color: #FFBABA;
+ }
+ input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 36px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  input[type=password] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }

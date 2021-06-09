@@ -1,0 +1,136 @@
+
+<div>
+<table >
+  <thead> 
+  <tr>
+    <th>#</th>
+ <th><h4>Titre</h4></th>
+
+<th><h4>Nom</h4></th><th><h4>Prénom</h4></th>
+<th><h4>Sexe</h4></th>
+<th><h4>Date de naissance</h4></th>
+<th><h4>Ville de naissance</h4></th>
+<th><h4>Pays de naissance</h4></th>
+<th><h4>Nationalité</h4></th>
+<th><h4>Pays de résidence</h4></th>
+<th><h4>Adresses</h4></th>
+<th><h4>Ville de résidence</h4></th>
+<th ><h4>CP</h4></th>
+<th><h4>Adresse email</h4></th>
+<th><h4>Téléphone</h4></th>
+<th><h4>Situation maritale</h4></th>
+
+</tr>
+ </thead>
+
+ <tbody > 
+<tr>
+   
+ <td>0</td>
+
+<td ><input style="width: 90px;"  id="titrev0" list="titre" >
+<datalist id="titre">
+  <option *ngFor="let csvData of titre" >{{csvData['Code.Titre']}}<input id="titre0" type="hidden" value="{{csvData['id.Titre']}}" ></option>
+</datalist>
+    </td>
+ 
+ 
+<td><input id="nom0" type="text" /> </td> <td><input id="prenom0" type="tel" /></td>
+
+<td><input style="width: 40px;" id="sex0"list="sex"><datalist id="sex" >
+  <OPTION value=""></OPTION>
+<OPTION value="F">F</OPTION>
+<OPTION value="M">M</OPTION>
+</datalist></td>
+<td> <input class="date" type="date" id="date0" name="date" placeholder="dd-mm-yyyy" 
+       value="" 
+       min="1900-01-01" max="2021-12-31" required>
+     </td>
+<td><input id="villenaissance0" type="text" /></td>
+
+ <td><input  id="paysnv0" list="paysn" >
+<datalist id="paysn"><option *ngFor="let csvData of pays" >{{csvData['Libellé.Pays']}}
+<input id="paysn0" type="hidden" value="{{csvData['id.Pays']}}" ></option>
+</datalist></td>
+
+ <td><input id="nationalitev0" list="nationalite" >
+<datalist id="nationalite"><option *ngFor="let csvData of nationalite" >{{csvData['Libellé.Nationalité']}}<input id="nationalite0" type="hidden" value="{{csvData['id.Nationalité']}}" ></option>
+</datalist></td>
+
+ <td><input id="paysrv0"list="paysr" >
+<datalist id="paysr"><option  *ngFor="let csvData of pays" >{{csvData['Libellé.Pays']}}<input id="paysr0" type="hidden" value="{{csvData['id.Pays']}}" ></option>
+</datalist></td>
+
+<td><input class="adresse" id="adresses0" type="text" placeholder="adresse 1"/> 
+<input class="adresse"id="adressess0" type="text" placeholder="adresse 2" /> </td>
+<td><input id="villeresidence0" type="text"/> </td>
+<td><input style="width: 55px;" id="code0" type="text" /></td>
+
+<td>   <input id="email0" type="email"  name="Email" ng-model="Email" />
+ </td>
+<td><input style="width: 120px;" type="tel" id="tel0" name="phone"
+       pattern="[0-9]{10}" required > Format: 0612345678 
+   <span class="validity"></span></td>
+       
+ <td><input class="situation" id="situationv0" list="situation" >
+<datalist id="situation"><option  *ngFor="let csvData of situation" >{{csvData['Libellé.Situation maritale']}}<input id="situation0" type="hidden" value="{{csvData['id.Situation maritale']}}" ></option>
+</datalist></td>
+</tr>
+
+
+
+     <tr *ngFor="let ligne of lignes;let pas = index">
+      <td>{{pas+1}}</td>
+<td><input style="width: 90px;" id="titrev{{pas+1}}" list="titre" >
+<datalist id="titre">
+          <option  *ngFor="let csvData of titre" >{{csvData['Code.Titre']}}
+          <input id="titre{{pas+1}}" type="hidden" value="{{csvData['id.Titre']}}" ></option>
+        
+        
+</datalist></td>
+<td><input id="nom{{pas+1}}" type="text" /> </td> 
+
+ <td><input id="prenom{{pas+1}}" type="tel" /></td>
+
+<td><input style="width: 40px;" id="sex{{pas+1}}"list="sex" ><datalist id="sex" >
+  <OPTION value=""></OPTION>
+<OPTION value="F">F</OPTION>
+<OPTION value="M">M</OPTION>
+</datalist></td>
+<td> <input type="date" class="date" placeholder="dd-mm-yyyy" id="date{{pas+1}}" name="date"
+       value=""
+       min="1900-01-01" max="2021-12-31"></td>
+<td><input id="villenaissance{{pas+1}}" type="text" /></td>
+ <td><input id="paysnv{{pas+1}}" list="paysn" >
+<datalist id="paysn"><option *ngFor="let csvData of pays" >{{csvData['Libellé.Pays']}}<input id="paysn{{pas+1}}" type="hidden" value="{{csvData['id.Pays']}}" ></option>
+</datalist></td>
+
+ <td><input id="nationalitev{{pas+1}}" list="nationalite" >
+<datalist id="nationalite"><option *ngFor="let csvData of nationalite" >{{csvData['Libellé.Nationalité']}}<input id="nationalite{{pas+1}}" type="hidden" value="{{csvData['id.Nationalité']}}" ></option>
+</datalist></td>
+
+ <td><input id="paysrv{{pas+1}}" list="paysr" >
+<datalist id="paysr"><option *ngFor="let csvData of pays" >{{csvData['Libellé.Pays']}}<input id="paysr{{pas+1}}" type="hidden" value="{{csvData['id.Pays']}}" ></option>
+</datalist></td>
+
+<td><input class="adresse" id="adresses{{pas+1}}" type="text" placeholder="adresse 1"/> 
+<input class="adresse"id="adressess{{pas+1}}" type="text" placeholder="adresse 2" /></td>
+<td><input id="villeresidence{{pas+1}}" type="text"/> </td>
+<td><input style="width: 55px;" id="code{{pas+1}}" type="text" /></td>
+
+<td>   <input id="email{{pas+1}}" type="email"  name="Email" ng-model="Email" />
+ </td>
+<td><input style="width: 120px;"  type="tel" id="tel{{pas+1}}" name="phone"
+       pattern="[0-9]{10}" required > Format: 0612345678 
+   <span class="validity"></span></td>
+       
+
+ <td><input class="situation"id="situationv{{pas+1}}" list="situation" >
+<datalist id="situation"><option *ngFor="let csvData of situation" >{{csvData['Libellé.Situation maritale']}}<input id="situation{{pas+1}}" type="hidden" value="{{csvData['id.Situation maritale']}}" ></option>
+</datalist></td>
+
+</tr>
+
+</tbody>
+</table>
+</div>  

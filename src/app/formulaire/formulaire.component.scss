@@ -1,0 +1,27 @@
+.date{
+  min-width: 125px;
+}
+.adresse{
+  width: 130px;
+}
+.situation{
+  min-width: 70px;
+}
+table {
+  margin: 8px 10px;
+
+ 
+}
+input:invalid+span:after {
+  position: absolute; content: '✖';
+  color: #8b0000;
+}
+
+input:valid+span:after {
+  position: absolute;
+  content: '✓';
+  color: #009000;
+}
+input{
+  max-width: 130px;
+}

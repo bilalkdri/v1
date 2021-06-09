@@ -1,0 +1,27 @@
+<app-auth></app-auth>
+ <div>
+ <ul  style="background-color: #0c0c0c;"><h2>Saisie pour import dans Aurion </h2><span class="text-center" id=heure ></span></ul>
+      <ul class="list-group">
+      
+
+      
+
+           
+
+        
+     <formulaire  [lignes]="lignes" [counter]="counter"></formulaire>
+ 
+    <table>
+<button id="+"  class="btn btn-success" (click)="ligneenplus()">+</button>
+<button  class="btn btn-danger" (click)="ligneenmoins()">-</button>
+ <button  class="btn btn-success" (click)="infotextarea()">Aperçu de la séléction</button>
+ 
+<tr><textarea class="transformation"  id="aa" disabled="true"></textarea></tr>
+
+
+ 
+  
+<button id="fin" class="btn btn-success" (click)="onSave()">Validation</button>
+
+</table> </ul>
+  </div>
